@@ -44,7 +44,7 @@ docker exec -i ollama ollama pull <MODEL>
 
 ---
 
-## 🎨 4. Build and Start Frontend
+## 🎨 4. Build Frontend
 
 ```bash
 cd CourseLangChain-frontend
