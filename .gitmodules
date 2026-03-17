@@ -1,0 +1,6 @@
+[submodule "CourseLangChain"]
+	path = CourseLangChain
+	url = https://github.com/NCCU-AI-SYSTEM/CourseLangChain
+[submodule "CourseLangChain-frontend"]
+	path = CourseLangChain-frontend
+	url = https://github.com/NCCU-AI-SYSTEM/CourseLangChain-frontend

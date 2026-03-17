@@ -1,0 +1,24 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./CourseLangChain-frontend/dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+  backend:
+    env_file: ./CourseLangChain/.env
+    build:
+      args:
+        PROJECT_PATH: /course-langchain
+      context: ./CourseLangChain
+      dockerfile: Dockerfile
+    # environment:
+    #   - OLLAMA_HOST=${OLLAMA_HOST}
+    #   - MODEL=${MODEL}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: python mock.py
+
