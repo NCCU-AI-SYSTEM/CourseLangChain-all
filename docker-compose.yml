@@ -18,7 +18,14 @@ services:
     # environment:
     #   - OLLAMA_HOST=${OLLAMA_HOST}
     #   - MODEL=${MODEL}
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    command: python mock.py
+    command: ["bash", "-c", "python build.py 114 2 && python app.py"]
 
